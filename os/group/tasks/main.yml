@@ -1,0 +1,8 @@
+---
+- name: CREATE SYSTEM GROUP
+  group:
+  args:
+    name: "{{name}}"
+    system: "{{system}}"
+    state: "present"
+

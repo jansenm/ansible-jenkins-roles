@@ -1,0 +1,8 @@
+---
+- include: download.yml
+  tags:
+    - download
+
+- include: install.yml
+  tags:
+    - install

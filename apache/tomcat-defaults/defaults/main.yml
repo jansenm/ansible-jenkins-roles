@@ -1,0 +1,2 @@
+# The directory where the tomcat archive will be unpacked (but not run)
+apache_tomcat_prefix: /opt/apache/tomcat

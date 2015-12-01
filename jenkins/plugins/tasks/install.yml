@@ -1,0 +1,8 @@
+---
+- name: INSTALL | EXTRACT ARCHIVE
+  # =========================================================================
+  action: copy
+  args:
+    src: "{{download_cache}}/jenkins/jenkins-plugin-{{item.name}}/{{item.name}}-{{item.version}}.hpi"
+    dest: "{{jenkins_home}}/plugins"
+  with_items: jenkins_plugins

@@ -1,0 +1,17 @@
+---
+- name: CREATE USER
+  # ===========================================================================
+  user:
+  args:
+    name: "{{name}}"
+    group: "{{group}}"
+    comment: "{{comment}}"
+    system: "{{system}}"
+    shell: "{{shell}}"
+    home: "{{home}}"
+    createhome: "{{createhome}}"
+    password: "{{password}}"
+    expires: "{{expires}}"
+    state: "present"
+  tags:
+    - os-user

@@ -1,0 +1,13 @@
+---
+#
+# DOWNLOAD AND INSTALL A JAVA
+#
+- include: download.yml
+  tags:
+    - download
+
+- include: install.yml
+  tags:
+    - install
+
+

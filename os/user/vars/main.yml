@@ -1,0 +1,6 @@
+
+createhome: yes
+expires: 0
+home: "/home/{{name}}"
+password: ""
+shell: "/bin/sh"

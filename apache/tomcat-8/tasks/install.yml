@@ -1,0 +1,16 @@
+---
+- name: INSTALL | EXTRACT ARCHIVE
+  # =====================================================================
+  action: unarchive
+  args:
+      src: "{{download_cache}}/tomcat-8/tomcat-core/{{apache_tomcat_download_archive_name}}"
+      dest: "{{apache_tomcat_prefix}}/"
+      creates: "{{apache_tomcat_prefix}}/apache-tomcat-{{apache_tomcat_download_version}}"
+  register: apache_tomcat_extract
+
+- name: INSTALL | GENERATE SETENV.SH
+  # =====================================================================
+  action: template
+  args:
+      dest: "{{apache_tomcat_prefix}}/apache-tomcat-{{apache_tomcat_download_version}}/bin/setenv.sh"
+      src: setenv.sh

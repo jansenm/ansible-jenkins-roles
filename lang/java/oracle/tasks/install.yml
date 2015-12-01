@@ -1,0 +1,15 @@
+---
+- name: Upload Java
+  # ===============================================================================
+  action: copy
+  args:
+    src: "{{download_cache}}/java-oracle/{{java.package}}"
+    dest: "/tmp/{{java.package}}"
+  tags: java-oracle
+
+- name: Unpack Java
+  # ===============================================================================
+  command: tar --no-same-owner --extract --gunzip --directory=/opt/java --file=/tmp/{{java.package}}
+  args:
+    creates: "{{java_prefix}}/{{java.dir}}"
+  tags: java-oracle

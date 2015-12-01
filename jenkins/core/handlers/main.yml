@@ -1,0 +1,5 @@
+---
+- name: JENKINS ¦ HANDLER | RESTART JENKINS
+  # =====================================================================
+  command: java -jar {{ jenkins_cli}} -s {{jenkins_url}} safe-restart
+

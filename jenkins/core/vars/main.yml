@@ -1,0 +1,3 @@
+jenkins_cli: "{{apache_tomcat_home}}/webapps/jenkins/WEB-INF/jenkins-cli.jar"
+jenkins_port: 8080
+jenkins_url: http://localhost:{{jenkins_port}}/jenkins

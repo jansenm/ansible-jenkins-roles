@@ -1,0 +1,31 @@
+---
+- name: JENKINS | SETUP | DROP INTO TOMCAT
+  # =====================================================================
+  action: copy
+  args:
+      src:  "{{download_cache}}/jenkins/jenkins-core/jenkins-{{jenkins_download_version}}.war"
+      dest: "{{apache_tomcat_home}}/webapps/jenkins.war"
+  register: r_jenkins_war
+
+- name: INSTALL | START TOMCAT
+  # =====================================================================
+  command: "nohup {{apache_tomcat_home}}/bin/catalina.sh start 2>&1"
+  when: jenkins_core_start == True
+
+- name: INSTALL | WAIT FOR TOMCAT
+  # =====================================================================
+  wait_for: port=8080 delay={{ startup_delay_s | default(10) }}
+  when: jenkins_core_start == True
+
+- name: JENKINS ¦ SETUP | WAIT FOR JENKINS
+  # =====================================================================
+  action: get_url
+  args:
+      force: true
+      url: "{{jenkins_url}}/view/All/builds"
+      dest: "/tmp"
+  register: r_get_url
+  until: r_get_url.msg is defined and r_get_url.msg.find("OK") != -1
+  retries: 10
+  delay: 6
+

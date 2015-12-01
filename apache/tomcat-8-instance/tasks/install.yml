@@ -1,0 +1,79 @@
+- name: INSTALL | CREATE APACHE_TOMCAT_HOME FOR JENKINS
+  # =====================================================================
+  action: file
+  args:
+    path: "{{apache_tomcat_home}}"
+    state: "directory"
+    mode: "0700"
+
+- name: INSTALL | PREPARE TOMCAT STRUCTURE (DIRECTORIES)
+  # =====================================================================
+  action: file
+  args:
+      path: "{{apache_tomcat_home}}/{{item}}"
+      state: "directory"
+  with_items:
+      - "webapps"
+      - "work"
+      - "temp"
+      - "logs"
+      - "conf"
+
+- name: INSTALL | STOP TOMCAT IF NECESSARY
+  # =====================================================================
+  command: "nohup {{apache_tomcat_home}}/bin/catalina.sh stop"
+  args:
+      removes: "{{apache_tomcat_home}}/logs/catalina.pid"
+
+- name: INSTALL | PREPARE TOMCAT STRUCTURE (SYMLINKS)
+  # =====================================================================
+  action: file
+  args:
+      path: "{{apache_tomcat_home}}/{{item}}"
+      src: "{{apache_tomcat_prefix}}/apache-tomcat-{{apache_tomcat_download_version}}/{{item}}"
+      state: "link"
+  with_items:
+      - "bin"
+      - "lib"
+
+- name: INSTALL | PREPARE TOMCAT STRUCTURE (COPY)
+  # =====================================================================
+  command: cp "{{apache_tomcat_prefix}}/apache-tomcat-{{apache_tomcat_download_version}}/{{item}}" "{{apache_tomcat_home}}/{{item}}"
+  # action: copy
+  # args:
+  #     dest: "{{apache_tomcat_home}}/{{item}}"
+  #     src: "{{apache_tomcat_home}}/apache-tomcat-{{apache_tomcat_download_version}}/{{item}}"
+  #     remote_src: True
+  with_items:
+      - "conf/catalina.policy"
+      - "conf/catalina.properties"
+      - "conf/context.xml"
+      - "conf/logging.properties"
+      - "conf/server.xml"
+      - "conf/tomcat-users.xml"
+      - "conf/web.xml"
+
+- name: INSTALL | PREPARE TOMCAT STRUCTURE (MANAGER APPS)
+  # =====================================================================
+  command: cp -r "{{apache_tomcat_prefix}}/apache-tomcat-{{apache_tomcat_download_version}}/{{item}}" "{{apache_tomcat_home}}/webapps/"
+  # action: synchronize
+  # args:
+  #     dest: "{{apache_tomcat_home}}/webapps/"
+  #     src: "{{apache_tomcat_home}}/apache-tomcat-{{apache_tomcat_download_version}}/{{item}}"
+  #     remote_src: True
+  with_items:
+      - "webapps/host-manager"
+      - "webapps/manager"
+      - "webapps/ROOT"
+      - "webapps/examples"
+      - "webapps/docs"
+
+- name: INSTALL | START TOMCAT
+  # =====================================================================
+  command: "nohup {{apache_tomcat_home}}/bin/catalina.sh start 2>&1"
+  when: apache_tomcat_start == True
+
+- name: INSTALL | WAIT FOR TOMCAT
+  # =====================================================================
+  wait_for: port=8080 delay={{ startup_delay_s | default(10) }}
+  when: apache_tomcat_start == True

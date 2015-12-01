@@ -1,0 +1,6 @@
+# :BUG: java.update gets resolved to "buildin method update of dict ..."
+
+java: "{{java_oracle_versions.v1_8_0_65}}"
+java_prefix: "/opt/java"
+java_home: "{{java_prefix}}/{{java.dir}}"
+
