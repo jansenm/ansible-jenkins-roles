@@ -1,0 +1,8 @@
+---
+- assert:
+    that:
+      - catalina_home is defined
+      - catalina_base is defined
+      - java_home is defined
+  tags:
+    - check_vars

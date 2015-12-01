@@ -1,8 +1,8 @@
-- name: INSTALL | CREATE APACHE_TOMCAT_HOME FOR JENKINS
+- name: INSTALL | CREATE CATALINA_BASE
   # =====================================================================
   action: file
   args:
-    path: "{{apache_tomcat_home}}"
+    path: "{{catalina_base}}"
     state: "directory"
     mode: "0700"
 
@@ -10,39 +10,25 @@
   # =====================================================================
   action: file
   args:
-      path: "{{apache_tomcat_home}}/{{item}}"
+      path: "{{catalina_base}}/{{item}}"
       state: "directory"
   with_items:
+      - "bin"
       - "webapps"
       - "work"
       - "temp"
       - "logs"
       - "conf"
 
-- name: INSTALL | STOP TOMCAT IF NECESSARY
-  # =====================================================================
-  command: "nohup {{apache_tomcat_home}}/bin/catalina.sh stop"
-  args:
-      removes: "{{apache_tomcat_home}}/logs/catalina.pid"
-
-- name: INSTALL | PREPARE TOMCAT STRUCTURE (SYMLINKS)
-  # =====================================================================
-  action: file
-  args:
-      path: "{{apache_tomcat_home}}/{{item}}"
-      src: "{{apache_tomcat_prefix}}/apache-tomcat-{{apache_tomcat_download_version}}/{{item}}"
-      state: "link"
-  with_items:
-      - "bin"
-      - "lib"
-
 - name: INSTALL | PREPARE TOMCAT STRUCTURE (COPY)
   # =====================================================================
-  command: cp "{{apache_tomcat_prefix}}/apache-tomcat-{{apache_tomcat_download_version}}/{{item}}" "{{apache_tomcat_home}}/{{item}}"
+  command: cp "{{catalina_home}}/{{item}}" "{{catalina_base}}/{{item}}"
+  args:
+    creates: "{{catalina_base}}/{{item}}"
   # action: copy
   # args:
-  #     dest: "{{apache_tomcat_home}}/{{item}}"
-  #     src: "{{apache_tomcat_home}}/apache-tomcat-{{apache_tomcat_download_version}}/{{item}}"
+  #     dest: "{{catalina_home}}/{{item}}"
+  #     src: "{{catalina_home}}/apache-tomcat-{{apache_tomcat_download_version}}/{{item}}"
   #     remote_src: True
   with_items:
       - "conf/catalina.policy"
@@ -53,13 +39,28 @@
       - "conf/tomcat-users.xml"
       - "conf/web.xml"
 
+- name: INSTALL | PREPARE CONTROL SCRIPTS
+  # =====================================================================
+  template:
+  args:
+    src: "{{item}}"
+    dest: "{{catalina_base}}/{{item}}"
+    mode: 0755
+  with_items:
+      - "bin/startup.sh"
+      - "bin/shutdown.sh"
+      - "bin/catalina.sh"
+      - "bin/setenv.sh"
+
 - name: INSTALL | PREPARE TOMCAT STRUCTURE (MANAGER APPS)
   # =====================================================================
-  command: cp -r "{{apache_tomcat_prefix}}/apache-tomcat-{{apache_tomcat_download_version}}/{{item}}" "{{apache_tomcat_home}}/webapps/"
+  command: cp -r "{{catalina_home}}/{{item}}" "{{catalina_base}}/webapps/"
+  args:
+    creates: "{{catalina_base}}/webapps/{{item}}"
   # action: synchronize
   # args:
-  #     dest: "{{apache_tomcat_home}}/webapps/"
-  #     src: "{{apache_tomcat_home}}/apache-tomcat-{{apache_tomcat_download_version}}/{{item}}"
+  #     dest: "{{catalina_home}}/webapps/"
+  #     src: "{{catalina_home}}/apache-tomcat-{{apache_tomcat_download_version}}/{{item}}"
   #     remote_src: True
   with_items:
       - "webapps/host-manager"
@@ -70,7 +71,7 @@
 
 - name: INSTALL | START TOMCAT
   # =====================================================================
-  command: "nohup {{apache_tomcat_home}}/bin/catalina.sh start 2>&1"
+  command: "nohup {{catalina_base}}/bin/catalina.sh start 2>&1"
   when: apache_tomcat_start == True
 
 - name: INSTALL | WAIT FOR TOMCAT

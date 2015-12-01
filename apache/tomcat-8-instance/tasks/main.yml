@@ -1,4 +1,6 @@
 ---
+- include: init.yml
+
 - include: install.yml
   tags:
     - install

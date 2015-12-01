@@ -7,10 +7,3 @@
       dest: "{{apache_tomcat_prefix}}/"
       creates: "{{apache_tomcat_prefix}}/apache-tomcat-{{apache_tomcat_download_version}}"
   register: apache_tomcat_extract
-
-- name: INSTALL | GENERATE SETENV.SH
-  # =====================================================================
-  action: template
-  args:
-      dest: "{{apache_tomcat_prefix}}/apache-tomcat-{{apache_tomcat_download_version}}/bin/setenv.sh"
-      src: setenv.sh
