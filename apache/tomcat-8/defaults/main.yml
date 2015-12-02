@@ -2,6 +2,16 @@ apache_tomcat_download_version: "8.0.28"
 apache_tomcat_download_mirror: "http://mirror.synyx.de/apache/tomcat"
 apache_tomcat_download_archive_md5: "4b7ba7a5af0a5c395c0740fc011b59d1"
 
+# Default values for certain apache configurations
+
+# The shutdown port. This is tomcats default.
+apache_tomcat_server_port: 8005
+
+# The non-ssl/tls http/1.1 connector port. This is tomcats default.
+apache_tomcat_http_connector_port: 8080
+
+# The ajp connector port. This is the tomcat default
+apache_tomcat_ajp_connector_port: 8009
 
 apache_tomcat_download_archive_name: "apache-tomcat-{{apache_tomcat_download_version}}.tar.gz"
 apache_tomcat_download_url: "{{apache_tomcat_download_mirror}}/tomcat-8/v{{apache_tomcat_download_version}}/bin/{{apache_tomcat_download_archive_name}}"

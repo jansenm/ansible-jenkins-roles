@@ -39,7 +39,7 @@
       - "conf/tomcat-users.xml"
       - "conf/web.xml"
 
-- name: INSTALL | PREPARE CONTROL SCRIPTS
+- name: INSTALL | PREPARE CONTROL SCRIPTS AND CONFIGURATION
   # =====================================================================
   template:
   args:
@@ -51,6 +51,7 @@
       - "bin/shutdown.sh"
       - "bin/catalina.sh"
       - "bin/setenv.sh"
+      - "conf/server.xml"
 
 - name: INSTALL | PREPARE TOMCAT STRUCTURE (MANAGER APPS)
   # =====================================================================
