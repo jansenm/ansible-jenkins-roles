@@ -1,0 +1,15 @@
+---
+- name: INSTALL | DROP INTO TOMCAT
+  # =====================================================================
+  action: copy
+  args:
+      src:  "{{download_cache}}/jenkins/jenkins-core/jenkins-{{jenkins_version}}.war"
+      dest: "{{tomcat_home}}/webapps/jenkins.war"
+
+- name: INSTALL | CREATE JENKINS HOME
+  # =========================================================================
+  action: file
+  args:
+    path: "{{jenkins_home}}"
+    state: "directory"
+

@@ -1,9 +1,0 @@
----
-- name: JENKINS | SETUP | DROP INTO TOMCAT
-  # =====================================================================
-  action: copy
-  args:
-      src:  "{{download_cache}}/jenkins/jenkins-core/jenkins-{{jenkins_download_version}}.war"
-      dest: "{{apache_tomcat_home}}/webapps/jenkins.war"
-  register: r_jenkins_war
-

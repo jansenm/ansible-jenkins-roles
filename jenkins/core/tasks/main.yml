@@ -1,9 +1,13 @@
 ---
+- include: init.yml
+  tags:
+    - always
+
 - include: download.yml
   tags:
     - download
 
-- include: install-jenkins.yml
+- include: install.yml
   tags:
     - install
 

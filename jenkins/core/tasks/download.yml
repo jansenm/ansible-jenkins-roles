@@ -1,5 +1,5 @@
 ---
-- name: JENKINS | DOWNLOAD | CREATE DESTINATION DIRECTORY
+- name: DOWNLOAD | CREATE CACHE DIRECTORY
   # =====================================================================
   sudo: No
   delegate_to: 127.0.0.1
@@ -8,23 +8,12 @@
     path: "{{download_cache}}/jenkins/jenkins-core"
     state: "directory"
 
-- name: JENKINS | DOWNLOAD | CREATE PLUGIN DESTINATION DIRECTORY
-  # =====================================================================
-  sudo: No
-  delegate_to: 127.0.0.1
-  action: file
-  args:
-    path: "{{download_cache}}/jenkins/jenkins-plugin-{{item.name}}/"
-    state: "directory"
-  with_items: jenkins_plugins
-
-- name: JENKINS | DOWNLOAD | CORE
+- name: DOWNLOAD | CORE
   # =====================================================================
   sudo: No
   delegate_to: 127.0.0.1
   action: get_url
   args:
       url:  "{{jenkins_download_url}}"
-      dest: "{{download_cache}}/jenkins/jenkins-core/jenkins-{{jenkins_download_version}}.war"
-  register: jenkins_download_changed
+      dest: "{{download_cache}}/jenkins/jenkins-core/jenkins-{{jenkins_version}}.war"
 

@@ -1,0 +1,13 @@
+---
+- name: "INIT | CHECK PARAMETERS"
+  # =========================================================================
+  assert:
+    that:
+      # (localhost) where to cache the tomcat archive.
+      - download_cache is defined
+      # We need a TOMCAT_HOME to install jenkins into ($TOMCAT_HOME/webapps)
+      - tomcat_home is defined
+      # jenkins version to download and install
+      - jenkins_version is defined
+      # We should set up a JENKINS_HOME outside of ~/.jenkins (the default).
+      - jenkins_home is defined
