@@ -5,5 +5,4 @@
   args:
       src: "{{download_cache}}/tomcat-8/tomcat-core/{{apache_tomcat_download_archive_name}}"
       dest: "{{apache_tomcat_prefix}}/"
-      creates: "{{apache_tomcat_prefix}}/apache-tomcat-{{apache_tomcat_download_version}}"
-  register: apache_tomcat_extract
+      creates: "{{apache_tomcat_prefix}}/apache-tomcat-{{tomcat_version}}"
