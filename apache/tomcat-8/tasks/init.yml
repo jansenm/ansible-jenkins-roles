@@ -2,7 +2,9 @@
   # =========================================================================
   assert:
     that:
-      # TOMCAT VERSION TO DOWNLOAD (e.g. "8.0.28")
+      # (localhost) where to cache the tomcat archive.
+      - download_cache is defined
+      # tomcat version to download (e.g. "8.0.28")
       - tomcat_version is defined
       # MD5 checksum to verify the archive (eg: "<algorithm>:<checksum>" "md5:4b7ba7a5af0a5c395c0740fc011b59d1")
       - tomcat_checksum is defined
