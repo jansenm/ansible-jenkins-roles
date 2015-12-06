@@ -1,5 +1,7 @@
 ---
 - include: init.yml
+  tags:
+    - always
 
 - include: install.yml
   tags:
