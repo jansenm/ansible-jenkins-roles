@@ -1,0 +1,13 @@
+- name: "INIT | CHECK PARAMETERS"
+  # =========================================================================
+  assert:
+    that:
+      # (localhost) where to cache the tomcat archive.
+      - download_cache is defined
+      # The list of jenkins plugins to download and install
+      #   jenkins_plugins:
+      #     - name: role-strategy
+      #       version: 2.2.0
+      #     - name: another plugin
+      #       version: 9.9.9
+      - jenkins_plugins is defined

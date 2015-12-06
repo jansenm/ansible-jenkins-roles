@@ -1,4 +1,8 @@
 ---
+- include: init.yml
+  tags:
+    - always
+
 - include: download.yml
   tags:
     - download
