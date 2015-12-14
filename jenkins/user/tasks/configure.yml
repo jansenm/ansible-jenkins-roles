@@ -1,0 +1,17 @@
+- name: "Set jenkins authentication strategy"
+  action: template
+  args:
+    src: "authentication/{{authentication_strategy}}.groovy"
+    dest: "{{jenkins_home}}/init.groovy.d/00_authentication_strategy.groovy"
+
+- name: "Set jenkins authorization strategy"
+  action: template
+  args:
+    src: "authorization/{{authorization_strategy}}.groovy"
+    dest: "{{jenkins_home}}/init.groovy.d/20_authorization_strategy.groovy"
+
+- name: "Add users"
+  action: template
+  args:
+    src: "init.groovy.d/configure_users.groovy"
+    dest: "{{jenkins_home}}/init.groovy.d/30_configure_users.groovy"

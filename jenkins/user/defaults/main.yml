@@ -1,0 +1,7 @@
+authentication_strategy: 'hudson_private'
+
+jenkins_admin_user: admin
+jenkins_admin_password: admin
+jenkins_admin_fullname: Jenkins Admin User
+jenkins_admin_description: Technical account for jenkins administration
+jenkins_admin_email: admin@localhost
