@@ -1,13 +1,4 @@
 ---
-- name: INSTALL | CREATE/INITIALIZE JENKINS HOME
-  # =========================================================================
-  action: file
-  args:
-    path: "{{jenkins_home}}/{{item}}"
-    state: "directory"
-  with_items:
-    - plugins
-
 - name: INSTALL | EXTRACT ARCHIVE
   # =========================================================================
   action: copy

@@ -6,10 +6,14 @@
       src:  "{{download_cache}}/jenkins/jenkins-core/jenkins-{{jenkins_version}}.war"
       dest: "{{tomcat_home}}/webapps/jenkins.war"
 
-- name: INSTALL | CREATE JENKINS HOME
+- name: INSTALL | CREATE/INITIALIZE JENKINS HOME
   # =========================================================================
   action: file
   args:
-    path: "{{jenkins_home}}"
+    path: "{{item}}"
     state: "directory"
+  with_items:
+    - "{{jenkins_home}}"
+    - "{{jenkins_home}}/plugins"
+    - "{{jenkins_home}}/init.groovy.d"
 
