@@ -7,6 +7,7 @@ def admin_fullname = '{{admin_fullname | default(jenkins_admin_fullname)}}'
 def admin_email = '{{admin_email | default(jenkins_admin_email)}}'
 def admin_description = '{{admin_description | default(jenkins_admin_description)}}'
 
+import hudson.model.*
 import jenkins.model.*
 import hudson.security.*
 import hudson.tasks.Mailer
@@ -30,11 +31,12 @@ class Helper {
         def user = instance.securityRealm.allUsers.find {it.id == username}
 
         if (user == null) {
-            println "Adding user ${user}"
+            println("Adding user ${user}")
             user = instance.securityRealm.createAccount(username, password)
         }
 
-        // We make sure those fields ALWAYS have the desired values and are not changed manually
+        // We make sure those fields ALWAYS have the desired values and are not changed manually. But we NEVER change
+        // the password. You are supposed to change it after the first boot.
         user.setFullName(fullname)
         // user.setDescription(description)
         user.addProperty(new Mailer.UserProperty(email));
@@ -42,25 +44,45 @@ class Helper {
 }
 
 
-// First make sure the admin user exists (and create it if possible)
+println("** Creating the configured users")
 switch (authentication_strategy) {
   case HudsonPrivateSecurityRealm:
-    // In this real we need to create the user.
-    Helper.ensure_user(admin_user, admin_password, admin_fullname, admin_email, admin_description)
+    {% for user in users %}
+    println("   * creating user {{user.id}}")
+    Helper.ensure_user(
+        "{{user.id}}",
+        "{{user.password}}",
+        "{{user.fullname}}",
+        "{{user.email}}",
+        "{{user.description | default('No description given')}}"
+    )
+    {% endfor %}
     break
   default:
-    println("Authentication Strategy not handled")
+    println("   * can not create users. authentication strategy not supported.")
     break
 }
 
-// Then make sure he is admin (if possible)
+println("** Giving permissions to configured users.")
 switch(authorization_strategy) {
   case GlobalMatrixAuthorizationStrategy:
   case ProjectMatrixAuthorizationStrategy:
-    println("Matrix Strategy")
-    authorization_strategy.add(Jenkins.ADMINISTER, "admin")
+    {% for user in users %}
+      println("    * configuring permissions for user {{user.id}}")
+      {% for permission in user.permissions %}
+      permission = Permission.fromId("{{permission}}")
+      if (permission)
+        {
+        authorization_strategy.add(permission, "{{user.id}}")
+        }
+      else
+        {
+        println(permission)
+        println("      ! Unknown permission {{permission}}")
+        }
+      {% endfor %}
+    {% endfor %}
     break
   default:
-    println("Authorization Strategy not handled")
-    println(authorization_strategy)
+    println("   * can not configure permissions. authorization strategy not supported.")
 }
