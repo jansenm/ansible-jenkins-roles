@@ -16,4 +16,5 @@
   args:
       url: "{{jenkins_plugin_download_url}}/{{item.name}}/{{item.version}}/{{item.name}}.hpi"
       dest: "{{download_cache}}/jenkins/jenkins-plugin-{{item.name}}/{{item.name}}-{{item.version}}.hpi"
+  when: item.enabled
   with_items: jenkins_plugins
