@@ -1,3 +1,4 @@
+// {{ansible_managed}}
 // Set the authorization strategy to
 import jenkins.model.*
 import hudson.security.*

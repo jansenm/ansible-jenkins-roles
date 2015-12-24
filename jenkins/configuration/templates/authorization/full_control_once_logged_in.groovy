@@ -1,3 +1,4 @@
+// {{ansible_managed}}
 // Set the authorization strategy to full_control_once_logged_in
 import jenkins.model.*
 import hudson.security.*

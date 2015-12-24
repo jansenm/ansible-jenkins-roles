@@ -1,3 +1,4 @@
+// {{ansible_managed}}
 // Make sure a admin user exists (if necessary)
 
 // CONFIGURATION
