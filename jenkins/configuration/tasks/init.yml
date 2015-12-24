@@ -5,5 +5,9 @@
     that:
       - authentication_strategy in ('hudson_private', 'no_authentication')
       - authorization_strategy in ('global_matrix', 'no_authorization', 'project_matrix', 'full_control_once_logged_in')
-  tags:
-    - always
+      # LOCATION PROPERTIES
+      # =======================
+      # opts:
+      #   admin_email: adminstrator email [OPTIONAL]
+      #   url: url of the jenkins instance [OPTIONAL]
+      #
