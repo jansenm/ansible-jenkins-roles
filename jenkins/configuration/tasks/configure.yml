@@ -20,6 +20,14 @@
     dest: "{{jenkins_home}}/init.groovy.d/30_configure-location-properties.groovy"
   when: admin_email is defined or url is defined
 
+- name: "CONFIGURE | EMAIL NOTIFICATION"
+ # =====================================================================
+  action: template
+  args:
+    src: "init.groovy.d/configure-email-notification.groovy"
+    dest: "{{jenkins_home}}/init.groovy.d/30_configure-email-notification.groovy"
+  when: smtp_host is defined
+
 - name: "CONFIGURE | USERS"
  # =====================================================================
   action: template
