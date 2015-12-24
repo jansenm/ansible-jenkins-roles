@@ -1,0 +1,8 @@
+---
+- name: "CONFIGURE | PROXY SETTINGS"
+ # =====================================================================
+  action: template
+  args:
+    src: "init.groovy.d/configure-proxy.groovy"
+    dest: "{{jenkins_home}}/init.groovy.d/40_proxy_configuration.groovy"
+  when: proxy_host is defined

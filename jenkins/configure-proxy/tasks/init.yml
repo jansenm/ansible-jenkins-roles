@@ -1,0 +1,9 @@
+---
+- assert:
+    that:
+      # We need jenkins_home
+      - jenkins_home is defined
+      # We need both port and hostname or neither
+      - proxy_host is undefined or proxy_port is defined
+      # We need both username and password or neither
+      - proxy_username is undefined or proxy_password is defined
