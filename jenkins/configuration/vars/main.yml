@@ -1,2 +1,5 @@
 ---
 bootstrap_git_branch: master
+
+authentication_strategy: "{{jenkins_default_authentication_strategy}}"
+authorization_strategy: "{{jenkins_default_authorization_strategy}}"
