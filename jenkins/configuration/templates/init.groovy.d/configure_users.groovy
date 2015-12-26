@@ -1,13 +1,6 @@
 // {{ansible_managed}}
 // Make sure a admin user exists (if necessary)
 
-// CONFIGURATION
-def admin_user = '{{admin_user | default(jenkins_admin_user)}}'
-def admin_password = '{{admin_password | default(jenkins_admin_password)}}'
-def admin_fullname = '{{admin_fullname | default(jenkins_admin_fullname)}}'
-def admin_email = '{{admin_email | default("")}}'
-def admin_description = '{{admin_description | default(jenkins_admin_description)}}'
-
 import hudson.model.*
 import jenkins.model.*
 import hudson.security.*
