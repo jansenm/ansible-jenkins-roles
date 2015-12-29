@@ -1,0 +1,12 @@
+# Base directory of the new tomcat instance
+# catalina_base:
+# Apache tomcat distribution to use.
+catalina_home:
+# Java installation to use.
+# java_home:
+# Server port
+server_port: "{{apache_tomcat_server_port}}"
+# Http connector port.
+http_connector_port: "{{apache_tomcat_http_connector_port}}"
+# Ajp connector port
+ajp_connector_port: "{{apache_tomcat_ajp_connector_port}}"

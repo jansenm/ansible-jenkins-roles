@@ -1,19 +1,21 @@
 ---
 - name: DOWNLOAD | CREATE DOWNLOAD CACHE DIRECTORY
-  # =====================================================================
-  sudo: No
+  # ===============================================================================
+  sudo: no
   delegate_to: 127.0.0.1
   action: file
   args:
-    path: "{{cache}}/"
     state: "directory"
+    path: "{{cache}}"
 
 - name: DOWNLOAD | FETCH ARTIFACT
   # =====================================================================
-  sudo: No
-  delegate_to: 127.0.0.1
   action: get_url
+  sudo: false
+  delegate_to: 127.0.0.1
   args:
       url:  "{{download_url}}"
-      dest: "{{cache}}/jenkins-{{version}}.war"
+      dest: "{{cache}}/{{archive_name}}"
+      # :TODO: Ansible 2.0 - Enable
+      # checksum: "{{tomcat_checksum}}"
 

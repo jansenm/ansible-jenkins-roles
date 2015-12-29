@@ -20,3 +20,4 @@ proxy = new ProxyConfiguration(
 {% else %}
 proxy = null
 Jenkins.instance.proxy = proxy
+{% endif %}

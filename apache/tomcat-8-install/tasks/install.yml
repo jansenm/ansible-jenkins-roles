@@ -1,0 +1,8 @@
+---
+- name: INSTALL | EXTRACT ARCHIVE
+  # =====================================================================
+  action: unarchive
+  args:
+      src: "{{cache}}//{{archive_name}}"
+      dest: "{{prefix}}/"
+      creates: "{{prefix}}/apache-tomcat-{{version}}"

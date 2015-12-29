@@ -1,20 +1,20 @@
-- name: DOWNLOAD | CREATE PLUGIN CACHE DIRECTORY
+- name: DOWNLOAD | CREATE DOWNLOAD CACHE DIRECTORY
   # =====================================================================
   sudo: No
   delegate_to: 127.0.0.1
   action: file
   args:
-    path: "{{download_cache}}/jenkins/jenkins-plugin-{{item.name}}/"
+    path: "{{cache}}/{{item.name}}/"
     state: "directory"
   with_items: "{{jenkins_plugins}}"
 
-- name: DOWNLOAD | PLUGINS
+- name: DOWNLOAD | FETCH ARTIFACTS
   # =====================================================================
   sudo: No
   delegate_to: 127.0.0.1
   action: get_url
   args:
       url: "{{jenkins_plugin_download_url}}/{{item.name}}/{{item.version}}/{{item.name}}.hpi"
-      dest: "{{download_cache}}/jenkins/jenkins-plugin-{{item.name}}/{{item.name}}-{{item.version}}.hpi"
+      dest: "{{cache}}/{{item.name}}/{{item.name}}-{{item.version}}.hpi"
   when: item.enabled
   with_items: "{{jenkins_plugins}}"

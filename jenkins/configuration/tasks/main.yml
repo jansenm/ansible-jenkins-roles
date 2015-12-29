@@ -1,4 +1,4 @@
-- include: init.yml
+- include: check.yml
   tags: always
 
 - include: configure.yml

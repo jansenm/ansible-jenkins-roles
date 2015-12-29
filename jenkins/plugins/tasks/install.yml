@@ -3,7 +3,7 @@
   # =========================================================================
   action: copy
   args:
-    src: "{{download_cache}}/jenkins/jenkins-plugin-{{item.name}}/{{item.name}}-{{item.version}}.hpi"
+    src: "{{cache}}/{{item.name}}/{{item.name}}-{{item.version}}.hpi"
     dest: "{{jenkins_home}}/plugins/{{item.name}}.jpi"
     backup: yes
   when: item.enabled

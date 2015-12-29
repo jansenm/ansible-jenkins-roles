@@ -1,0 +1,17 @@
+# tomcat version to download (e.g. "8.0.28")
+version:
+# MD5 checksum to verify the archive (eg: "<algorithm>:<checksum>" "md5:4b7ba7a5af0a5c395c0740fc011b59d1")
+checksum:
+# Install prefix
+prefix: "{{apache_tomcat_prefix}}"
+# Local download cache directory
+# cache_directory:
+
+# Convenience variables.
+
+# The archive name to download.
+archive_name: "apache-tomcat-{{version}}.tar.gz"
+# The full url for the download.
+download_url: "{{apache_tomcat_download_mirror}}/tomcat-8/v{{version}}/bin/{{archive_name}}"
+# Role cache directory.
+cache: "{{cache_directory}}/apache.tomcat-8.core/"

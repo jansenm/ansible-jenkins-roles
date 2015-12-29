@@ -1,0 +1,11 @@
+- name: "CHECK | PARAMETERS"
+  # =========================================================================
+  assert:
+    that:
+      # (localhost) where to cache the tomcat archive.
+      - cache_directory is defined and cache_directory is not none
+      # tomcat version to download (e.g. "8.0.28")
+      - version is defined and version is not none
+      # MD5 checksum to verify the archive (eg: "<algorithm>:<checksum>" "md5:4b7ba7a5af0a5c395c0740fc011b59d1")
+      - checksum is defined and checksum is not none
+

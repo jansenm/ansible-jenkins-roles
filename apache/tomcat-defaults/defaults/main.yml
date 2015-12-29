@@ -1,2 +1,14 @@
 # The directory where the tomcat archive will be unpacked (but not run)
-apache_tomcat_prefix: /opt/apache/tomcat
+apache_tomcat_prefix: "/opt/apache-tomcat"
+
+# The shutdown port. This is tomcats default.
+apache_tomcat_server_port: 8005
+
+# The non-ssl/tls http/1.1 connector port. This is tomcats default.
+apache_tomcat_http_connector_port: 8080
+
+# The ajp connector port. This is the tomcat default
+apache_tomcat_ajp_connector_port: 8009
+
+# URL for tomcat archive download.
+apache_tomcat_download_mirror: "http://mirror.synyx.de/apache/tomcat"

@@ -1,0 +1,32 @@
+# The java version number to install (eg. 1.8.0_65)
+version:
+# The build number corresponding to the version-
+build:
+# The platform to download.
+platform:
+# The format to download.
+format:
+# Install prefix
+prefix: /opt/java
+# Local download cache directory
+# cache_directory:
+# Server to download from (default: :file:`{{lang.java.oracle_sdk.server}}`)
+server: "{{lang.java.oracle_sdk.server}}"
+
+# Internal convenience variables.
+
+# The resulting java_home.
+java_home: "{{prefix}}/jdk{{version}}"
+# Split the version into parts.
+major: "{{version.split('.')[0]}}"
+minor: "{{version.split('.')[1]}}"
+patch: "{{version.partition('_')[0].split('.')[2]}}"
+update: "{{version.rpartition('_')[2]}}"
+# Role cache directory.
+cache: "{{cache_directory}}/lang.java.oracle_sdk/"
+# Directory part of download url.
+directory: "{{minor}}u{{update}}-b{{build}}"
+# Name of the archive to download.
+artifact: "jdk-{{minor}}u{{update}}-{{platform}}.{{format}}"
+# Full download url.
+url: "{{server}}/{{directory}}/{{artifact}}"

@@ -1,0 +1,7 @@
+- name: "INIT | CHECK PARAMETERS"
+  # =========================================================================
+  assert:
+    that:
+      - jenkins_home is defined and jenkins_home is not none
+      - plugins is defined
+

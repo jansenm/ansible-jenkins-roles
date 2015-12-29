@@ -1,4 +1,2 @@
-jenkins_download_archive_name: "jenkins.war"
 jenkins_download_mirror: "http://mirrors.jenkins-ci.org/war"
-jenkins_download_url: "{{jenkins_download_mirror}}/{{jenkins_version}}/{{jenkins_download_archive_name}}"
 

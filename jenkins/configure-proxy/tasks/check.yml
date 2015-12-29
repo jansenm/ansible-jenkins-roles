@@ -1,5 +1,7 @@
 ---
-- assert:
+- name: "CHECK | CHECK PARAMETERS"
+  # =========================================================================
+  assert:
     that:
       # We need jenkins_home
       - jenkins_home is defined

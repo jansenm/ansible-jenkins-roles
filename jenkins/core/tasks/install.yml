@@ -3,8 +3,8 @@
   # =====================================================================
   action: copy
   args:
-      src:  "{{download_cache}}/jenkins/jenkins-core/jenkins-{{jenkins_version}}.war"
-      dest: "{{tomcat_home}}/webapps/jenkins.war"
+      src:  "{{cache}}/jenkins-{{jenkins_version}}.war"
+      dest: "{{catalina_base}}/webapps/jenkins.war"
 
 - name: INSTALL | CREATE/INITIALIZE JENKINS HOME
   # =========================================================================

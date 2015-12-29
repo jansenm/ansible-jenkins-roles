@@ -10,7 +10,7 @@ desc.setSmtpHost("{{smtp_host}}")
 {% if smtp_port is defined %}
 desc.setSmtpPort("{{smtp_port}}")
 {% endif %}
-desc.setUseSsl({{smtp_usessl | default("true")}})
+desc.setUseSsl({{ smtp_usessl | default("true")}})
 {% if smtp_user is defined %}
 desc.setSmtpAuth("{{smtp_user}}", "{{smtp_password}}")
 {% endif %}

@@ -1,0 +1,4 @@
+lang:
+  java:
+    oracle_sdk:
+      server: "http://download.oracle.com/otn-pub/java/jdk"

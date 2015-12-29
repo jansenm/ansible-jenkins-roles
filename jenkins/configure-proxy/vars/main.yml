@@ -1,2 +1,3 @@
 ---
-proxy_no_proxy: ""
+
+proxy_no_proxy: "localhost\n127.0.0.1"

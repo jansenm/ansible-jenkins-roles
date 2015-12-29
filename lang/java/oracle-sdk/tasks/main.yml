@@ -2,12 +2,13 @@
 #
 # DOWNLOAD AND INSTALL A JAVA
 #
+- include: check.yml
+  tags: always
+
 - include: download.yml
-  tags:
-    - download
+  tags: download
 
 - include: install.yml
-  tags:
-    - install
+  tags: install
 
 

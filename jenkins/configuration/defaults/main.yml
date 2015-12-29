@@ -1,3 +1,6 @@
+# Default authentication strategy
 jenkins_default_authentication_strategy: 'hudson_private'
+
+# Default authorization strategy
 jenkins_default_authorization_strategy: 'project_matrix'
 

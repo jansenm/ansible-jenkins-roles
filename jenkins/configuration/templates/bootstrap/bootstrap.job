@@ -55,6 +55,3 @@ job.buildersList.add(step)
 job.save()
 jenkins.reload()
 
-// Now trigger a build
-// :TODO: Make this optional
-job.scheduleBuild(5, new Cause.RemoteCause('localhost', 'ansible playbook run'))

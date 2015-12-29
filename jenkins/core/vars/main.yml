@@ -1,3 +1,18 @@
-jenkins_cli: "{{apache_tomcat_home}}/webapps/jenkins/WEB-INF/jenkins-cli.jar"
-jenkins_port: 8080
-jenkins_url: http://localhost:{{jenkins_port}}/jenkins
+# Jenkins version to install
+# version:
+# Checksum for the jenkins archive
+checksum:
+# Tomcat install to drop into
+# catalina_base:
+# JENKINS_HOME to configure for the instance.
+jenkins_home:
+# Local download cache directory
+# cache_directory:
+# URL of the archive to download
+archive_name: "jenkins.war"
+download_url: "{{jenkins_download_mirror}}/{{version}}/{{archive_name}}"
+
+# Convenience variables
+
+# Role cache directory.
+cache: "{{cache_directory}}/jenkins.core/"
