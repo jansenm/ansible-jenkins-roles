@@ -16,18 +16,19 @@ FEATURES
 
 There are several steps already implemented
 
-# Download apache-tomcat and setup a tomcat instance
-# Download jenkins and drop it into tomcat
-# Download a configured set of plugins and activate them.
-# Configure jenkins
-- authorization strategy
-- authentication strategy
-- notification settings
-- location properties
-- users (for hudson_private authentication strategy aka "Jenkins' own user database")
-- permissions (for hudson authorization strategies project_matrix and global_matrix)
-# Install a bootstrap job that clones a git repository and executes all `bootstrap/*.job` scripts with the
-`job-dsl` plugin.
+#. Download apache-tomcat and setup a tomcat instance
+#. Download jenkins and drop it into tomcat
+#. Download a configured set of plugins and activate them.
+#. Configure jenkins
+
+   * authorization strategy
+   * authentication strategy
+   * notification settings
+   * location properties
+   * users (for hudson_private authentication strategy aka "Jenkins' own user database")
+   * permissions (for hudson authorization strategies project_matrix and global_matrix)
+
+#. Install a bootstrap job that clones a git repository and executes all `bootstrap/*.job` scripts with the `job-dsl` plugin.
 
 DOCUMENTATION
 -------------
@@ -47,6 +48,7 @@ Implement more configuration roles::
   Jenkins configuration is complex. I will implement all configuration i need for my daily work.
 Provide job templates::
   The idea is to provide a list of job templates for common jobs. Eg build a
+
     - ruby gem
     - python egg
     - ...
@@ -63,6 +65,7 @@ LICENSE
 
 Please see `LICENSE <https://github.com/jansem/ansible-jenkins-roles/blob/master/LICENSE>`_
 
+.. _job-dsl: https://github.com/jenkinsci/job-dsl-plugin
 .. _Michael Jansen: http://michael-jansen.biz
 .. _hosted at Read The Docs: http://ansible-jenkins-roles.readthedocs.org/en/latest/
 .. _examples repo: https://github.com/jansenm/ansible-jenkins-roles-example
