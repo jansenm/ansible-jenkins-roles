@@ -63,7 +63,7 @@ AUTHOR
 LICENSE
 -------
 
-Please see `LICENSE <https://github.com/jansem/ansible-jenkins-roles/blob/master/LICENSE>`_
+Please see `LICENSE <https://github.com/jansenm/ansible-jenkins-roles/blob/master/LICENSE>`_
 
 .. _job-dsl: https://github.com/jenkinsci/job-dsl-plugin
 .. _Michael Jansen: http://michael-jansen.biz
