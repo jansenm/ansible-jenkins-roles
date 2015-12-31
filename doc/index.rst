@@ -17,11 +17,8 @@ Contents:
    :maxdepth: 2
    :glob:
 
+   Home <self>
    roles/*
-
-
-
-
 
 Indices and tables
 ==================
