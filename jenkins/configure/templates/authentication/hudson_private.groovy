@@ -1,4 +1,5 @@
 // {{ansible_managed}}
+println("** Configuring authentication strategy hudson_private")
 // Set the authentication strategy to HudsonPrivateSecurityRealm.
 import jenkins.model.*
 import hudson.security.*

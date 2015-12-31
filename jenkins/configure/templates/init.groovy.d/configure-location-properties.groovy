@@ -1,5 +1,5 @@
 // {{ansible_managed}}
-
+println("** Configuring location properties")
 import jenkins.model.*
 
 def jenkinsLocationConfiguration = JenkinsLocationConfiguration.get()

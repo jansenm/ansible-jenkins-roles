@@ -1,4 +1,5 @@
 // {{ansible_managed}}
+println("** Configuring authorization strategy no_authorization")
 // Set the authorization strategy to unsecured
 import jenkins.model.*
 import hudson.security.*

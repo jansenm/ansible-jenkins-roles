@@ -1,4 +1,5 @@
 // {{ansible_managed}}
+println("** Configuring authentication strategy no_authentication")
 // Set the authentication strategy to SecurityRealm::NO_AUTHENTICATION (default)
 import jenkins.model.*
 import hudson.security.*

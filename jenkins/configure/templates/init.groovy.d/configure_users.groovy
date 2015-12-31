@@ -62,7 +62,7 @@ switch(authorization_strategy) {
   case GlobalMatrixAuthorizationStrategy:
   case ProjectMatrixAuthorizationStrategy:
     {% for user in users %}
-      println("    * configuring permissions for user {{user.id}}")
+      println("   * configuring permissions for user {{user.id}}")
       {% for permission in user.permissions %}
       permission = Permission.fromId("{{permission}}")
       if (permission)
@@ -72,11 +72,11 @@ switch(authorization_strategy) {
       else
         {
         println(permission)
-        println("      ! Unknown permission {{permission}}")
+        println("   !!!! Unknown permission {{permission}}")
         }
       {% endfor %}
     {% endfor %}
     break
   default:
-    println("   * can not configure permissions. authorization strategy not supported.")
+    println("   !!!! can not configure permissions. authorization strategy not supported.")
 }

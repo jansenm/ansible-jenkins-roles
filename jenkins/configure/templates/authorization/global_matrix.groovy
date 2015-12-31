@@ -1,4 +1,5 @@
 // {{ansible_managed}}
+println("** Configuring authorization strategy global_matrix")
 // Set the authorization strategy to
 import jenkins.model.*
 import hudson.security.*
