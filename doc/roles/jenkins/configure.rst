@@ -1,9 +1,12 @@
-Role jenkins/configuration
-==========================
+Role jenkins/configure
+======================
 
-Configure jenkins.
+Base configuration for jenkins.
 
-.. note:: This role is destined to be split into several smaller roles :).
+- Authentication
+- Authorization
+- Users
+- Admin email and url.
 
 .. ansible:role:: jenkins/configuration
 
@@ -20,37 +23,74 @@ Configure jenkins.
    :param authorization_strategy:
          Authorization strategy to configure (default: *jenkins_default_authorization_strategy*)
 
+   :param users: A list of users to create. Read the comments below.
+
    :param admin_email: Admin email address.
    :param url: Jenkins url.
 
-   :param users: A list of users to create. Read the comments below.
 
 
-   *authentication_strategy*
+   **Authentication**
 
-   Currently implemented are the following strategies.
+   Set *authentication_strategy* to one of the following values.
 
-   hudson_private
-     TODO
-   no_authentication
-     TODO
+   Jenkins' own user database
+      hudson_private
+   Disable Security
+      no_authentication
+   LDAP
+      not yet implemented
+   Unix user/group database
+      not yet implemented
 
-   **authorization_strategy**
+   **Authorization**
 
-   Currently implemented are the following strategies.
+   Set *authorization_strategy* to one of the following values.
 
-   full_control_once_logged_in
-     TODO
-   global_matrix
-     TODO
-   no_authorization
-     TODO
-   project_matrix
-     TODO
+   Anyone can do anything
+      no_authorization
+   Logged-in user can do anything
+      full_control_once_logged_in
+   Matrix-based security
+      global_matrix
+   Project-base Matrix Authorization Strategy
+      project_matrix
 
-   **users**
+   **Permissions**
 
-   A List of hashes to define the users we should create.
+   Jenkins permissions have string presentation. They consist of <group>.<permission>.
+
+   These are the group names for some permissions. The given category is from jenkins *Configure Global Sercurity* Page.
+   To give a permission just append the permission to the group (eg. hudson.model.Hudson.Administer). In doubt
+   configure the permission manually apply and check the :file:`jenkins/config.xml` file in :envvar:`JENKINS_HOME`
+
+   Overall
+      hudson.model.Hudson
+   Credentials
+      com.cloudbees.plugins.credentials.CredentialsProvider
+   Slave
+      hudson.model.Computer
+   Job
+      hudson.model.Item
+   Run
+      hudson.model.Run
+   View
+      hudson.model.View
+   SCM
+      hudson.scm.SCM
+
+   **Users**
+
+   If set *users* is expected to be a list of hashes to define the users to create.
+
+   Only the authentication strategy *hudson_private* support creating users in jenkins.
+
+   Only for authorization strategy *project_matrix* and *global_matrix* permissions are configurable. Authentication
+   strategy does not matter for permissions. Unless its *no_authentication*.
+
+   The password will never be changed if the user already exists.
+
+   Example configuration:
 
    .. code-block:: yaml
 
@@ -83,14 +123,7 @@ Configure jenkins.
         }
       ]
 
-   * Only for authentication strategy *hudson_private* user can be created.
 
-   * Only for authorization strategy *project_matrix* and *global_matrix* permission are configurable. Authentication
-     strategy does not matter for permissions.
-
-   * The password will never be changed if the user already exists.
-
-   * The strings required for permission are best acquired by configuring them in a jenkins and then checking *TODO*.
 
 
 .. _job-dsl: https://github.com/jenkinsci/job-dsl-plugin
