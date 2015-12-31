@@ -1,7 +1,6 @@
 ****************************
 ANSIBLE JENKINS DEVOPS ROLES
 ****************************
-
 .. contents:: Table of Contents
 
 A set of roles to support automated installation of `jenkins`_ with `ansible`_.
@@ -9,11 +8,10 @@ A set of roles to support automated installation of `jenkins`_ with `ansible`_.
 This is not a one size fits all role. Extensive customisation should be expected before your jenkins is running but
 at that point its running **FULLY** configured. No manual intervention needed. At least that is the goal.
 
-For an example playbook that makes use of this roles check my `examples repo`.
+For an example playbook that makes use of this roles check my `examples repo`_.
 
 FEATURES
 --------
-
 There are several steps already implemented
 
 #. Download apache-tomcat and setup a tomcat instance
@@ -32,13 +30,11 @@ There are several steps already implemented
 
 DOCUMENTATION
 -------------
-
 Documentation is done with sphinx. The repository contains a alpha version of a ansible sphinx-domain in the
-subfolder `doc/ansible`. The documentation itself is `hosted at Read The Docs`_
+subfolder `doc/ansible`. The documentation itself is hosted at `Read The Docs`_
 
 OUTLOOK
 -------
-
 There are several action points left on my plate. Those i remember right now :)
 
 Write a ansible coding standard::
@@ -49,25 +45,24 @@ Implement more configuration roles::
 Provide job templates::
   The idea is to provide a list of job templates for common jobs. Eg build a
 
-    - ruby gem
-    - python egg
-    - ...
+  - ruby gem
+  - python egg
+  - ...
+
 Finish the sphinx-ansible domain::
   And then bring it up to sphinx-contrib.
 
 AUTHOR
 ------
-
 `Michael Jansen`_ created Ansible Jenkins DevOps Roles
 
 LICENSE
 -------
-
 Please see `LICENSE <https://github.com/jansenm/ansible-jenkins-roles/blob/master/LICENSE>`_
 
 .. _job-dsl: https://github.com/jenkinsci/job-dsl-plugin
 .. _Michael Jansen: http://michael-jansen.biz
-.. _hosted at Read The Docs: http://ansible-jenkins-roles.readthedocs.org/en/latest/
+.. _Read The Docs: http://ansible-jenkins-roles.readthedocs.org/en/latest/
 .. _examples repo: https://github.com/jansenm/ansible-jenkins-roles-example
 .. _ansible: http://ansible.com
 .. _jenkins: http://jenkins-ci.org
