@@ -1,0 +1,12 @@
+---
+
+- debug: var=smtp_host
+
+- name: "CONFIGURE | EMAIL NOTIFICATION"
+  # =====================================================================
+  action: template
+  args:
+    src: "init.groovy.d/configure-email-notification.groovy"
+    dest: "{{jenkins_home}}/init.groovy.d/40_configure-email-notification.groovy"
+  when: smtp_host is defined
+

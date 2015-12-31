@@ -8,5 +8,3 @@ authorization_strategy: "{{jenkins_default_authorization_strategy}}"
 # Branch to checkout in bootstrap_git_repo
 bootstrap_git_branch: "master"
 
-# Email Notificiation: Use SSL?
-smtp_usessl: "true"

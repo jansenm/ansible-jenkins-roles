@@ -23,11 +23,6 @@ Configure jenkins.
    :param bootstrap_git_repo: Repository with job-dsl scripts to bootstrap this jenkins.
    :param bootstrap_git_branch: Branch to checkout from git_repository (default: master)
 
-   :param smtp_host: Smtp host to configure. If undefined mailer is reset to null.
-   :param smtp_port: Smtp port.
-   :param smtp_usessl: Use SSL for smtp connection? (default: true)
-   :param smtp_user: Username for smtp authentication. This is optional.
-   :param smtp_password: Password for smtp authentication.
    :param admin_email: Admin email address.
    :param url: Jenkins url.
 

@@ -21,6 +21,3 @@
       #   smtp_charset: character set for emails [DEFAULT: utf-8]
       #   smtp_username: smtp username [OPTIONAL]
       #   smtp_password: smtp password [OPTIONAL unless username is given]
-      # We need a replyto address. The rest is optional
-      - smtp_host is not defined or smtp_replyto is defined
-      - smtp_username is not defined or smtp_password is defined

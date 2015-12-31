@@ -1,0 +1,21 @@
+# Smtp host to configure. If undefined mailer is reset to null.
+smtp_host: null
+
+# Smtp port.
+smtp_port: 587
+
+# Email sender address
+smtp_replyto: null
+
+# Use SSL for smtp connection? true/false. (default: "true")
+smtp_usessl: false # This if for SSL not TLS!
+
+# Username for smtp authentication. This is optional.
+smtp_username: null
+
+# Password for smtp authentication. Only needed if username is given
+smtp_password: null
+
+# Character encoding
+smtp_charset:  utf-8
+
