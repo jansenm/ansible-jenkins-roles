@@ -2,10 +2,10 @@ import docutils
 import docutils.nodes
 import docutils.parsers.rst
 import docutils.parsers.rst.directives
-import sphinx.application
-import sphinx.domains
 import sphinx.addnodes
+import sphinx.application
 import sphinx.directives
+import sphinx.domains
 import sphinx.environment
 import sphinx.locale
 import sphinx.roles
@@ -13,28 +13,29 @@ import sphinx.util.compat
 import sphinx.util.docfields
 import sphinx.util.nodes
 
+
 class AnsibleRoleRole(sphinx.roles.XRefRole):
     def process_link(self, env, refnode, has_explicit_title, title, target):
-        print(title, "#", target)
         return title, target
 
 
 class AnsibleRoleDirective(sphinx.directives.ObjectDescription):
+    # :BUG: Something is wrong (just a test)
 
     required_arguments = 1
 
     doc_field_types = [
         sphinx.util.docfields.GroupedField(
-                'default',
-                label=sphinx.locale.l_('Defaults'),
-                names=('default', 'default')
+            'default',
+            label=sphinx.locale.l_('Defaults'),
+            names=('default', 'default')
         ),
         sphinx.util.docfields.Field(
-                'dependency',
-                label=sphinx.locale.l_('Dependencies'),
-                names=('dependency', 'depend'),
-                rolename='role',
-                bodyrolename='role'
+            'dependency',
+            label=sphinx.locale.l_('Dependencies'),
+            names=('dependency', 'depend'),
+            rolename='role',
+            bodyrolename='role'
         ),
         sphinx.util.docfields.TypedField(
             'parameter',
@@ -44,9 +45,9 @@ class AnsibleRoleDirective(sphinx.directives.ObjectDescription):
             typenames=('type',)
         ),
         sphinx.util.docfields.Field(
-                'sudo',
-                label=sphinx.locale.l_('Uses sudo'),
-                names=('sudo')
+            'sudo',
+            label=sphinx.locale.l_('Uses sudo'),
+            names=('sudo')
         )
     ]
 
@@ -56,12 +57,12 @@ class AnsibleRoleDirective(sphinx.directives.ObjectDescription):
 
     has_content = True
 
-    def handle_signature(self, sig : str, signode : sphinx.addnodes.desc_signature):
+    def handle_signature(self, sig: str, signode: sphinx.addnodes.desc_signature):
         (ns, _, rolename) = sig.rpartition('/')
         signode += sphinx.addnodes.desc_annotation('role', 'Role ')
         signode += sphinx.addnodes.desc_addname(ns, "{ns} ".format(ns=ns))
         signode += sphinx.addnodes.desc_name(rolename, rolename)
-        return 'role-'+sig
+        return 'role-' + sig
 
     def add_target_and_index(self, name, sig, signode):
         targetname = name
@@ -106,7 +107,7 @@ class AnsibleDomain(sphinx.domains.Domain):
                      type, target, node, contnode):
 
         print(target)
-        if (type=="role"):
+        if (type == "role"):
             for (docname, name) in self.data['roles'].values():
                 if name == target:
                     print("Yes")
@@ -128,13 +129,13 @@ class AnsibleDomain(sphinx.domains.Domain):
             # print(env)
             return
 
-
     def resolve_any_xref(self, env, fromdocname, builder,
-                     type, target, node, contnode):
+                         type, target, node, contnode):
 
         print("resolve_xref")
         print(type)
         print(target)
+
 
 def setup(app: sphinx.application.Sphinx):
     """Initialize the sphinx extension for ansible.
