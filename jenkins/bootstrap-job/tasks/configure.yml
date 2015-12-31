@@ -1,0 +1,8 @@
+---
+- name: "CONFIGURE | BOOTSTRAP JOB"
+ # =====================================================================
+  action: template
+  args:
+    src: "init.groovy.d/80_configure-bootstrap-job.groovy"
+    dest: "{{jenkins_home}}/init.groovy.d/80_configure-bootstrap-job.groovy"
+  when: git_repo is defined

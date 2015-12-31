@@ -1,0 +1,5 @@
+---
+- assert:
+    that:
+      # Make sure jenkins_home is set
+      - jenkins_home is not none

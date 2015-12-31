@@ -27,10 +27,3 @@
     src: "init.groovy.d/configure_users.groovy"
     dest: "{{jenkins_home}}/init.groovy.d/60_configure_users.groovy"
 
-- name: "CONFIGURE | BOOTSTRAP JOB"
- # =====================================================================
-  action: template
-  args:
-    src: "bootstrap/bootstrap.job"
-    dest: "{{jenkins_home}}/init.groovy.d/80_configure-bootstrap-job.groovy"
-  when: bootstrap_git_repo is defined

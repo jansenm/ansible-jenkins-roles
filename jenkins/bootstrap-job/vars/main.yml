@@ -1,0 +1,6 @@
+# :arg jenkins_home: Jenkins instance to configure
+# :arg git_repo: The git repository to clone
+
+# The git branch to clone
+git_branch: master
+

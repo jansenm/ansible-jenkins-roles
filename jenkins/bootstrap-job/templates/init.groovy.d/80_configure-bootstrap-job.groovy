@@ -1,3 +1,4 @@
+println("** Configuring bootstrap job")
 final JOB_NAME = 'bootstrap-jenkins-instance'
 final JOB_COMMANDS = '''\
 job('bootstrap-jenkins') {
@@ -5,9 +6,9 @@ job('bootstrap-jenkins') {
         git {
             remote {
                 name('origin')
-                url('{{bootstrap_git_repo}}')
+                url('{{git_repo}}')
             }
-            branch('{{bootstrap_git_branch}}')
+            branch('{{git_branch}}')
         }
     }
 

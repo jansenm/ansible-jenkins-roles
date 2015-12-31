@@ -5,6 +5,3 @@ authentication_strategy: "{{jenkins_default_authentication_strategy}}"
 # Authorization strategy
 authorization_strategy: "{{jenkins_default_authorization_strategy}}"
 
-# Branch to checkout in bootstrap_git_repo
-bootstrap_git_branch: "master"
-

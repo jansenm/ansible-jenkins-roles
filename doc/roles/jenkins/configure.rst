@@ -20,9 +20,6 @@ Configure jenkins.
    :param authorization_strategy:
          Authorization strategy to configure (default: *jenkins_default_authorization_strategy*)
 
-   :param bootstrap_git_repo: Repository with job-dsl scripts to bootstrap this jenkins.
-   :param bootstrap_git_branch: Branch to checkout from git_repository (default: master)
-
    :param admin_email: Admin email address.
    :param url: Jenkins url.
 
@@ -50,12 +47,6 @@ Configure jenkins.
      TODO
    project_matrix
      TODO
-
-   **bootstrap_git_repo**
-
-   If defined a bootstrap job will be created that checks out the repository at *bootstrap_git_repository* to follow
-   *bootstrap_git_branch* and then executes all scripts that match the file glob `bootstrap/*.job` as a 'job-dsl'_
-   script. This naturally assumes job-dsl is install and ready.
 
    **users**
 
