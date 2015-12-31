@@ -1,1 +1,8 @@
+.. _Michael Jansen: http://michael-jansen.biz
+.. _Read The Docs: http://ansible-jenkins-roles.readthedocs.org/en/latest/
+.. _ansible: http://ansible.com
 .. _apache tomcat: https://tomcat.apache.org/
+.. _examples repo: https://github.com/jansenm/ansible-jenkins-roles-example
+.. _jenkins: http://jenkins-ci.org
+.. _job-dsl plugin: https://github.com/jenkinsci/job-dsl-plugin
+

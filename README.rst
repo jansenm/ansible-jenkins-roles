@@ -26,7 +26,7 @@ There are several steps already implemented
    * users (for hudson_private authentication strategy aka "Jenkins' own user database")
    * permissions (for hudson authorization strategies project_matrix and global_matrix)
 
-#. Install a bootstrap job that clones a git repository and executes all `bootstrap/*.job` scripts with the `job-dsl` plugin.
+#. Create a bootstrap job that checks out from vcs and executes all `bootstrap/*.job` scripts with the `job-dsl plugin`_.
 
 DOCUMENTATION
 -------------
@@ -60,9 +60,5 @@ LICENSE
 -------
 Please see `LICENSE <https://github.com/jansenm/ansible-jenkins-roles/blob/master/LICENSE>`_
 
-.. _job-dsl: https://github.com/jenkinsci/job-dsl-plugin
-.. _Michael Jansen: http://michael-jansen.biz
-.. _Read The Docs: http://ansible-jenkins-roles.readthedocs.org/en/latest/
-.. _examples repo: https://github.com/jansenm/ansible-jenkins-roles-example
-.. _ansible: http://ansible.com
-.. _jenkins: http://jenkins-ci.org
+.. include:: doc/_references.txt
+
