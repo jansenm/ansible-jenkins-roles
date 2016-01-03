@@ -5,19 +5,3 @@
     that:
       - authentication_strategy in ('hudson_private', 'no_authentication')
       - authorization_strategy in ('global_matrix', 'no_authorization', 'project_matrix', 'full_control_once_logged_in')
-      # LOCATION PROPERTIES
-      # ===================
-      # opts:
-      #   admin_email: adminstrator email [OPTIONAL]
-      #   url: url of the jenkins instance [OPTIONAL]
-      #
-      # EMAIL NOTIFICATION
-      # ==================
-      # opts:
-      #   smtp_host: hostname of the server [REQUIRED]
-      #   smtp_replyto: email address [REQUIRED]
-      #   smtp_port: port [OPTIONAL]
-      #   smtp_usessl: use ssl for connection [DEFAULT: true]
-      #   smtp_charset: character set for emails [DEFAULT: utf-8]
-      #   smtp_username: smtp username [OPTIONAL]
-      #   smtp_password: smtp password [OPTIONAL unless username is given]
