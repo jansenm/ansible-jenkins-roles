@@ -7,3 +7,6 @@ authorization_strategy: "{{jenkins_default_authorization_strategy}}"
 
 # System Message
 system_message: "Provisioned with ansible, all changes will be lost"
+
+# Number of executors
+number_of_executors: 2
