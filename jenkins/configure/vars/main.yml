@@ -10,3 +10,9 @@ system_message: "Provisioned with ansible, all changes will be lost"
 
 # Number of executors
 number_of_executors: 2
+
+# Node Usage
+node_mode: 'NORMAL'
+
+# Node label
+node_labels: ''

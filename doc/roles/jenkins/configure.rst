@@ -29,6 +29,8 @@ Base configuration for jenkins.
    :param url: Jenkins url.
    :param system_message: System message. (default: "Provisioned with ansible, all changes will be lost")
    :param number_of_executors: Number of executors (default: 2)
+   :param node_mode: Node usage method. Valid values are "NORMAL" and "EXCLUSIVE" (default: "NORMAL")
+   :param node_labels: Node labels as string. (default: "")
 
 
    **Authentication**

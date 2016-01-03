@@ -5,3 +5,4 @@
     that:
       - authentication_strategy in ('hudson_private', 'no_authentication')
       - authorization_strategy in ('global_matrix', 'no_authorization', 'project_matrix', 'full_control_once_logged_in')
+      - node_mode | upper in ('EXCLUSIVE', 'NORMAL')
