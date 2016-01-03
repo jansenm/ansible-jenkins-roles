@@ -25,7 +25,7 @@ class Helper {
         def user = instance.securityRealm.allUsers.find {it.id == username}
 
         if (user == null) {
-            println("Adding user ${user}")
+            println("Adding user ${username}")
             user = instance.securityRealm.createAccount(username, password)
         }
 
@@ -80,3 +80,5 @@ switch(authorization_strategy) {
   default:
     println("   !!!! can not configure permissions. authorization strategy not supported.")
 }
+
+instance.save()
