@@ -27,7 +27,7 @@ Base configuration for jenkins.
 
    :param admin_email: Admin email address.
    :param url: Jenkins url.
-
+   :param system_message: System message. (default: "Provisioned with ansible, all changes will be lost")
 
 
    **Authentication**

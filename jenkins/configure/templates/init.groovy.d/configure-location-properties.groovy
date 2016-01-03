@@ -2,11 +2,12 @@
 println("** Configuring location properties")
 import jenkins.model.*
 
+// System Message
+instance = Jenkins.instance
+instance.systemMessage = "{{system_message|default(null)}}"
+
+// Location Properties
 def jenkinsLocationConfiguration = JenkinsLocationConfiguration.get()
-{% if admin_email is defined -%}
-jenkinsLocationConfiguration.setAdminAddress("{{admin_email}}")
-{% endif -%}
-{% if url is defined -%}
-jenkinsLocationConfiguration.setUrl("{{url}}")
-{% endif -%}
+jenkinsLocationConfiguration.setAdminAddress("{{admin_email | default('')}}")
+jenkinsLocationConfiguration.setUrl("{{url|default('')}}")
 jenkinsLocationConfiguration.save()
