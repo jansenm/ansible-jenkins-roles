@@ -18,7 +18,6 @@
   args:
     src: "init.groovy.d/configure-location-properties.groovy"
     dest: "{{jenkins_home}}/init.groovy.d/40_configure-location-properties.groovy"
-  when: admin_email is defined or url is defined
 
 - name: "CONFIGURE | USERS"
  # =====================================================================
