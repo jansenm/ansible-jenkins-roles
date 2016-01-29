@@ -15,7 +15,7 @@ job('bootstrap-jenkins') {
     steps {
         dsl {
             removeAction('DISABLE')
-            external('bootstrap/*.job')
+            external('src/main/jobs/*.groovy')
         }
     }
 }
