@@ -1,2 +1,5 @@
+# Apache tomcat context path
+jenkins_deploy_default_context_path: "jenkins"
+
 jenkins_download_mirror: "http://mirrors.jenkins-ci.org/war"
 

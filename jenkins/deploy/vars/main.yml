@@ -1,15 +1,23 @@
 # Jenkins version to install
 # version:
+
 # Checksum for the jenkins archive
 checksum:
+
 # Tomcat install to drop into
 # catalina_base:
+
 # JENKINS_HOME to configure for the instance.
 # jenkins_home:
-# URL of the archive to download
+
+# Archive name to download
 archive_name: "jenkins.war"
 
+# URL of the archive to download
 download_url: "{{jenkins_download_mirror}}/{{version}}/{{archive_name}}"
+
+# Apache tomcat context path
+context_path: "{{jenkins_deploy_default_context_path}}"
 
 # Convenience variables
 
