@@ -55,17 +55,8 @@
 
 - name: INSTALL | PREPARE TOMCAT STRUCTURE (MANAGER APPS)
   # =====================================================================
-  command: cp -r "{{catalina_home}}/{{item}}" "{{catalina_base}}/webapps/"
+  command: cp -r "{{catalina_home}}/webapps/{{item}}" "{{catalina_base}}/webapps/"
   args:
     creates: "{{catalina_base}}/webapps/{{item}}"
-  # action: synchronize
-  # args:
-  #     dest: "{{catalina_home}}/webapps/"
-  #     src: "{{catalina_home}}/apache-tomcat-{{apache_tomcat_download_version}}/{{item}}"
-  #     remote_src: True
   with_items:
-      - "webapps/host-manager"
-      - "webapps/manager"
-      - "webapps/ROOT"
-      - "webapps/examples"
-      - "webapps/docs"
+    - "{{manager_apps}}"

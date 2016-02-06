@@ -10,3 +10,6 @@ server_port: "{{apache_tomcat_server_port}}"
 http_connector_port: "{{apache_tomcat_http_connector_port}}"
 # Ajp connector port
 ajp_connector_port: "{{apache_tomcat_ajp_connector_port}}"
+
+# Tomcat manager apps to copy into the instance
+manager_apps: "{{apache_tomcat_8_instance_manager_apps}}"

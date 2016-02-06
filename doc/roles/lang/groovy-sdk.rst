@@ -19,6 +19,6 @@ Download and install `apache groovy`_.
 
    The *cache* directory needs to exist and writable by the local user.
 
-   .. note:: The resulting :envvar:`GROOVA_HOME` is :file:`{{prefix}}/groovy-sdk-{{version}}`
+   .. note:: The resulting :envvar:`GROOVY_HOME` is :file:`{{prefix}}/groovy-sdk-{{version}}`
 
 .. _apache groovy: http://www.groovy-lang.org/
