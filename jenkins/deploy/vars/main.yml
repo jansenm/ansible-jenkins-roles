@@ -5,11 +5,10 @@ checksum:
 # Tomcat install to drop into
 # catalina_base:
 # JENKINS_HOME to configure for the instance.
-jenkins_home:
-# Local download cache directory
-# cache_directory:
+# jenkins_home:
 # URL of the archive to download
 archive_name: "jenkins.war"
+
 download_url: "{{jenkins_download_mirror}}/{{version}}/{{archive_name}}"
 
 # Convenience variables
