@@ -1,0 +1,3 @@
+<Context>
+  <Environment name="JENKINS_HOME" value="{{jenkins_home}}" type="java.lang.String" override="false"/>
+</Context>

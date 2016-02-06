@@ -1,11 +1,4 @@
 ---
-- name: INSTALL | DROP INTO TOMCAT
-  # =====================================================================
-  action: copy
-  args:
-      src:  "{{cache}}/jenkins-{{jenkins_version}}.war"
-      dest: "{{catalina_base}}/webapps/jenkins.war"
-
 - name: INSTALL | CREATE/INITIALIZE JENKINS HOME
   # =========================================================================
   action: file
@@ -16,4 +9,18 @@
     - "{{jenkins_home}}"
     - "{{jenkins_home}}/plugins"
     - "{{jenkins_home}}/init.groovy.d"
+
+- name: INSTALL | CONFIGURE TOMCAT CONTEXT
+  # =====================================================================
+  template:
+    src:  "catalina_context.xml"
+    dest: "{{catalina_base}}/conf/Catalina/localhost/jenkins.xml"
+
+- name: INSTALL | DROP INTO TOMCAT
+  # =====================================================================
+  action: copy
+  args:
+      src:  "{{cache}}/jenkins-{{jenkins_version}}.war"
+      dest: "{{catalina_base}}/webapps/jenkins.war"
+
 
