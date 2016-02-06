@@ -6,3 +6,11 @@
       src: "{{cache}}//{{archive_name}}"
       dest: "{{prefix}}/"
       creates: "{{prefix}}/apache-tomcat-{{version}}"
+
+- name: INSTALL | MAKE CONF/ WORLD READABLE
+  # =====================================================================
+  file:
+    path: "{{prefix}}/apache-tomcat-{{version}}/conf"
+    mode: "0755"
+    recurse: no
+
