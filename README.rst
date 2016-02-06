@@ -14,7 +14,7 @@ FEATURES
 --------
 There are several steps already implemented
 
-#. Download apache-tomcat and setup a tomcat instance
+#. Download `apache tomcat`_ and setup a tomcat instance
 #. Download jenkins and drop it into tomcat
 #. Download a configured set of plugins and activate them.
 #. Configure jenkins
@@ -27,6 +27,9 @@ There are several steps already implemented
    * permissions (for hudson authorization strategies project_matrix and global_matrix)
 
 #. Create a bootstrap job that checks out from vcs and executes all `bootstrap/*.job` scripts with the `job-dsl plugin`_.
+
+.. IMPORTANT::
+   All roles are designed to be used outside this playbook.
 
 DOCUMENTATION
 -------------
@@ -60,5 +63,11 @@ LICENSE
 -------
 Please see `LICENSE <https://github.com/jansenm/ansible-jenkins-roles/blob/master/LICENSE>`_
 
-.. include:: doc/_references.txt
-
+.. Github does not support includes in README files!!!!!!
+.. _Michael Jansen: http://michael-jansen.biz
+.. _Read The Docs: http://ansible-jenkins-roles.readthedocs.org/en/latest/
+.. _ansible: http://ansible.com
+.. _apache tomcat: https://tomcat.apache.org/
+.. _examples repo: https://github.com/jansenm/ansible-jenkins-roles-example
+.. _jenkins: http://jenkins-ci.org
+.. _job-dsl plugin: https://github.com/jenkinsci/job-dsl-plugin

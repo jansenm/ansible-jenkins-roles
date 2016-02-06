@@ -18,6 +18,7 @@ Contents:
    :glob:
 
    Home <self>
+   coding_standards
    roles/*
 
 Indices and tables
