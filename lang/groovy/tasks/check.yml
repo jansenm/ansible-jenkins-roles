@@ -1,0 +1,9 @@
+---
+- name: CHECK | PARAMETERS
+  # =========================================================================
+  assert:
+    that:
+      # Installation prefix
+      - install_prefix is defined
+      # Local download cache directory
+      - cache_directory is defined

@@ -1,0 +1,19 @@
+# The groovy version to install
+version: "{{lang_groovy_sdk_default_version]]"
+
+# The archive name
+artifact: "apache-groovy-sdk-{{version}}.zip"
+
+# The complete url
+download_url: "{{lang_groovy_sdk_download_server}}/groovy/maven/{{artifact}}"
+
+# The local artifact cache
+cache: "{{cache_directory}}/lang.groovy-sdk"
+
+# Directory to install to
+prefix: "{{lang_groovy_sdk_install_prefix}}"
+
+# The resulting groovy installation
+groovy_home: "{{prefix}}/groovy-{{version}}"
+
+

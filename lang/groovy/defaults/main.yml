@@ -1,0 +1,8 @@
+# Mirror to download from
+lang_groovy_sdk_download_server: http://dl.bintray.com/
+
+# Default version to install
+lang_groovy_sdk_default_version: "2.4.5"
+
+# The installation prefix
+lang_groovy_sdk_install_prefix: "{{install_prefix}}/groovy-sdk"

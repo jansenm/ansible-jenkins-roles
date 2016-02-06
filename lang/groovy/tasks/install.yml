@@ -1,0 +1,16 @@
+---
+- name: INSTALL | UPLOAD ARTIFACT
+  # ===============================================================================
+  action: copy
+  args:
+    src: "{{cache}}/{{artifact}}"
+    dest: "/tmp/{{artifact}}"
+
+- name: INSTALL | EXTRACT ARTIFACT
+  # ===============================================================================
+  action: unarchive
+  args:
+    src: "{{cache}}/{{artifact}}"
+    dest: "{{prefix}}"
+    creates: "{{groovy_home}}"
+
