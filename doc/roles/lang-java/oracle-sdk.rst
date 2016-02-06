@@ -13,7 +13,7 @@ Download and install `oracle java sdk`_.
    :param build: The build number of the version (eg. 17).
    :param platform: The platform to download.
    :param format: The format to download.
-   :param prefix: Install prefix (default: :file:`/opt/java`).
+   :param prefix: Install prefix (default: :file:`{{install_prefix}}/java`).
    :param server: Server to download from (default: :file:`{{lang.java.oracle_sdk.server}}`)
    :param cache_directory: Where to cache downloaded artifacts for future reuse on play host.
 

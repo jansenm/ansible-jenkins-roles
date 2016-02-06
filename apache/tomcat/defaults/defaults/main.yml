@@ -1,5 +1,5 @@
 # The directory where the tomcat archive will be unpacked (but not run)
-apache_tomcat_prefix: "/opt/apache-tomcat"
+apache_tomcat_prefix: "{{install_prefix}}/apache-tomcat"
 
 # The shutdown port. This is tomcats default.
 apache_tomcat_server_port: 8005

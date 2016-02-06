@@ -5,11 +5,7 @@ Deploy the jenkins webapp into a application server. Currently only `apache tomc
 
 The application server is *not* started after dropping jenkins. Neither is it stopped before doing that.
 
-Tomcat
-------
-
 It will download and drop jenkins into the tomcat at *catalina_base*.
-
 
 .. ansible:role:: jenkins/core
 

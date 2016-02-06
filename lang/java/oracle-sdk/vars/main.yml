@@ -7,11 +7,9 @@ platform:
 # The format to download.
 format:
 # Install prefix
-prefix: /opt/java
-# Local download cache directory
-# cache_directory:
+prefix: "{{install_prefix}}/java"
 # Server to download from (default: :file:`{{lang.java.oracle_sdk.server}}`)
-server: "{{lang.java.oracle_sdk.server}}"
+server: "{{lang_java_oracle_sdk_server}}"
 
 # Internal convenience variables.
 

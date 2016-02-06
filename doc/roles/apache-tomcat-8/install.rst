@@ -16,5 +16,5 @@ Role apache/tomcat-8/install
 
    :param version: Tomcat version to install (eg. 8.0.29)
    :param checksum: Checksum for the tomcat archive (eg. 4b7ba7a5af0a5c395c0740fc011b59d1)
-   :param prefix: Install prefix (default: :file:`{{apache.tomcat.prefix}}`).
+   :param prefix: Install prefix (default: :file:`{{apache_tomcat_prefix}}`).
 
