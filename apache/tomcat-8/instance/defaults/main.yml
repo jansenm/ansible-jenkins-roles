@@ -1,4 +1,6 @@
 # Tomcat manager apps to copy into the instance
+apache_tomcat_8_java_opts: ""
+
 apache_tomcat_8_instance_manager_apps:
   - "host-manager"
   - "manager"

@@ -3,3 +3,4 @@
 
 export CATALINA_PID="{{catalina_base}}/temp/catalina.pid"
 export JAVA_HOME="{{java_home}}"
+export JAVA_OPTS="{{java_opts}}"
