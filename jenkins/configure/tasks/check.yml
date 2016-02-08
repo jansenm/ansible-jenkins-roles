@@ -3,7 +3,7 @@
   # =========================================================================
   assert:
     that:
-      - authentication_strategy in ('hudson_private', 'no_authentication')
-      - authorization_strategy in ('global_matrix', 'no_authorization', 'project_matrix', 'full_control_once_logged_in')
+      - authentication_strategy in ('hudson_private', 'no_authentication', 'active_directory')
+      - authorization_strategy in ('global_matrix', 'no_authorization', 'project_matrix', 'full_control_once_logged_in', 'active_directory')
       - node_mode | upper in ('EXCLUSIVE', 'NORMAL')
       - number_of_executors | int
