@@ -19,5 +19,5 @@ proxy = new ProxyConfiguration(
     {% endif %}
 {% else %}
 proxy = null
-Jenkins.instance.proxy = proxy
 {% endif %}
+Jenkins.instance.proxy = proxy
