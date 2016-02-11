@@ -11,6 +11,6 @@
   # =====================================================================
   file:
     path: "{{prefix}}/apache-tomcat-{{version}}/conf"
-    mode: "0755"
-    recurse: no
+    mode: "a+r"
+    recurse: yes
 
