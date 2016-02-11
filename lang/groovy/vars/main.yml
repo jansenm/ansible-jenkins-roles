@@ -1,5 +1,5 @@
 # The groovy version to install
-version: "{{lang_groovy_sdk_default_version]]"
+version: "{{lang_groovy_sdk_default_version}}"
 
 # The archive name
 artifact: "apache-groovy-sdk-{{version}}.zip"
@@ -15,5 +15,3 @@ prefix: "{{lang_groovy_sdk_install_prefix}}"
 
 # The resulting groovy installation
 groovy_home: "{{prefix}}/groovy-{{version}}"
-
-
