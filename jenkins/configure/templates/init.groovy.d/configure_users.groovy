@@ -45,9 +45,9 @@ switch (authentication_strategy) {
     println("   * creating user {{user.id}}")
     Helper.ensure_user(
         "{{user.id}}",
-        "{{user.password}}",
-        "{{user.fullname}}",
-        "{{user.email}}",
+        "{{user.password|default('')}}",
+        "{{user.fullname|default('')}}",
+        "{{user.email|default('No email given')}}",
         "{{user.description | default('No description given')}}"
     )
     {% endfor %}
