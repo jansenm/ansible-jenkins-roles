@@ -1,3 +1,7 @@
 doc/_build/
 *.pyc
 README.html
+
+# IDEA
+.idea/
+*.iml
