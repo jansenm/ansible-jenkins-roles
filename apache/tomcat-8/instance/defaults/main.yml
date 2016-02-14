@@ -1,6 +1,11 @@
 # Tomcat manager apps to copy into the instance
 apache_tomcat_8_java_opts: ""
 
+# :TODO: in group_vars/all.yml
+apache_tomcat_8_default_versions: "8.0.32"
+
+apache_tomcat_8_instance_catalina_home: "{{apache_tomcat_prefix}}/apache-tomcat-{{tomcat_version|default(apache_tomcat_8_default_version)}}"
+
 apache_tomcat_8_instance_manager_apps:
   - "host-manager"
   - "manager"

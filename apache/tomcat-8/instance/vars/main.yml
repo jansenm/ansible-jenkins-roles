@@ -2,7 +2,7 @@
 # catalina_base:
 
 # Apache tomcat distribution to use.
-catalina_home:
+catalina_home: "{{apache_tomcat_8_instance_catalina_home}}"
 
 # Java installation to use.
 # java_home:

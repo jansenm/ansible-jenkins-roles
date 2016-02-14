@@ -3,19 +3,16 @@ Role apache/tomcat-8/instance
 
    Create a tomcat 8 instance.
 
-   Currently the instance will have all apps running.
-
-   * host-manager
-   * manager
-   * ROOT
-   * examples
-   * docs
-
 .. ansible:role:: apache/tomcat-8-instance
 
    :sudo: No
    :dependency: apache/tomcat-defaults
 
+   :default apache_tomcat_8_default_version:
+      Default tomcat version to install (default: unset)
+   :default apache_tomcat_8_instance_catalina_home:
+      Default `CATALINA_HOME` to use for instance setup (default:
+      `{{apache_tomcat_prefix}}/apache-tomcat-{{tomcat_version|default(apache_tomcat_8_default_version)}}`)
    :default apache_tomcat_8_instance_manager_apps:
       Default tomcat webapps to activate for the instance (default: all - see below)
    :default apache_tomcat_8_java_opts:
