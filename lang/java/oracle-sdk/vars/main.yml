@@ -1,5 +1,6 @@
 # The java version number to install (eg. 1.8.0_65)
-version:
+version: "{{lang_java_oracle_sdk_version}}"
+
 # The build number corresponding to the version-
 build:
 # The platform to download.
