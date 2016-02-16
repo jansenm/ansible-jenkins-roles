@@ -5,7 +5,7 @@ Download and install `oracle java sdk`_.
 
 .. ansible:role:: lang/java/oracle-sdk
 
-   :sudo: No
+   :become: No
 
    :default lang_java_oracle_sdk_server: The download server.
    :default lang_java_oracle_sdk_version: The default java version to install (default: none).

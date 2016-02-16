@@ -10,7 +10,7 @@ Base configuration for jenkins.
 
 .. ansible:role:: jenkins/configuration
 
-   :sudo: No
+   :become: No
 
    :default jenkins_default_authentication_strategy:
          Default authentication strategy (*hudson_private*)

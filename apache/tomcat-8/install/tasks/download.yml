@@ -1,7 +1,7 @@
 ---
 - name: DOWNLOAD | CREATE DOWNLOAD CACHE DIRECTORY
   # ===============================================================================
-  sudo: no
+  become: no
   delegate_to: 127.0.0.1
   action: file
   args:
@@ -11,7 +11,7 @@
 - name: DOWNLOAD | FETCH ARTIFACT
   # =====================================================================
   action: get_url
-  sudo: false
+  become: false
   delegate_to: 127.0.0.1
   args:
       url:  "{{download_url}}"

@@ -59,7 +59,7 @@ Role jenkins/plugins
 
 .. ansible:role:: jenkins/plugins
 
-   :sudo: No
+   :become: No
 
    :default jenkins_plugins_download_url: The url to download from.
 

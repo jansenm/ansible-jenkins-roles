@@ -45,9 +45,9 @@ class AnsibleRoleDirective(sphinx.directives.ObjectDescription):
             typenames=('type',)
         ),
         sphinx.util.docfields.Field(
-            'sudo',
-            label=sphinx.locale.l_('Uses sudo'),
-            names=('sudo')
+            'become',
+            label=sphinx.locale.l_('Uses become'),
+            names=('become')
         )
     ]
 

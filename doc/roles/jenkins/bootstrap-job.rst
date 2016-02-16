@@ -11,7 +11,7 @@ Currently only git is supported but adding support for other vcs is a simple mat
 
 .. ansible:role:: jenkins/bootstrap-job
 
-   :sudo: No
+   :become: No
 
    :param jenkins_home: Jenkins instance home.
    :param git_repo: Git repository with job-dsl scripts to bootstrap the jenkins instance.

@@ -5,7 +5,7 @@ Configure the email notification part of the jenkins configuration.
 
 .. ansible:role:: jenkins/configure-email-notification
 
-   :sudo: No
+   :become: No
 
    :param jenkins_home: Jenkins instance home.
    :param smtp_host: SMTP host to configure. If undefined mailer is reset to null.

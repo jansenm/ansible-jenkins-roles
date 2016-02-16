@@ -42,7 +42,7 @@ There are several action points left on my plate. Those i remember right now :)
 
 Write a ansible coding standard::
   The idea is to document all rules and conventions applied when writing these roles. I have for example a strict *no
-  sudo for roles* policy.
+  become for roles* policy.
 Implement more configuration roles::
   Jenkins configuration is complex. I will implement all configuration i need for my daily work.
 Provide job templates::

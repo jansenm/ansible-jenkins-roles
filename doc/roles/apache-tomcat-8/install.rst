@@ -11,7 +11,7 @@ Role apache/tomcat-8/install
 
 .. ansible:role:: apache/tomcat-8-install
 
-   :sudo: No
+   :become: No
    :dependency: apache/tomcat-defaults
 
    :param version: Tomcat version to install (eg. 8.0.29)

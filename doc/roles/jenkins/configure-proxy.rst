@@ -5,7 +5,7 @@ Configure the proxy settings in jenkins.
 
 .. ansible:role:: jenkins/configure-proxy
 
-   :sudo: No
+   :become: No
 
    :param jenkins_home: Jenkins instance home.
    :param proxy_host: Proxy Hostname

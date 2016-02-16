@@ -5,7 +5,7 @@ Role apache/tomcat-8/instance
 
 .. ansible:role:: apache/tomcat-8-instance
 
-   :sudo: No
+   :become: No
    :dependency: apache/tomcat-defaults
 
    :default apache_tomcat_8_default_version:

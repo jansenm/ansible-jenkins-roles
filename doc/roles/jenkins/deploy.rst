@@ -9,7 +9,7 @@ It will download and drop jenkins into the tomcat at *catalina_base*.
 
 .. ansible:role:: jenkins/core
 
-   :sudo: No
+   :become: No
    :default jenkins_download_mirror: Mirror to download from (default: http://mirrors.jenkins-ci.org/war)
    :default jenkins_deploy_default_context_path: Apache tomcat context path (default: `"jenkins"`).
 

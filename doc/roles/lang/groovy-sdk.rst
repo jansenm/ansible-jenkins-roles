@@ -5,7 +5,7 @@ Download and install `apache groovy`_.
 
 .. ansible:role:: lang/groovy-sdk
 
-   :sudo: No
+   :become: No
    :default lang_groovy_sdk_server: The download server to use (default: `"http://dl.bintray.com"`).
    :default lang_groovy_default_version: The default version to install. (default: `"2.4.5"`).
    :default lang_groovy_install_prefix: The installation_prefix (default: `"{{install_prefix}}/groovy-sdk"`).

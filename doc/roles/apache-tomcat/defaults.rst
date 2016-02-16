@@ -7,7 +7,7 @@ You should not need to call it directly unless you implement a tomcat role.
 
 .. ansible:role:: apache/tomcat-defaults
 
-   :sudo: No
+   :become: No
 
    :default apache_tomcat_download_server: Mirror to download from (default: "http://mirror.synyx.de/apache/tomcat")
    :default apache_tomcat_prefix: Default installation prefix (default: :file:`{{install_prefix}}/apache-tomcat`).
