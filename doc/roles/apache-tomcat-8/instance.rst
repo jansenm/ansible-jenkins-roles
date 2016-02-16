@@ -39,6 +39,10 @@ according to your needs.
 The role :ansible:role:`role-apache/tomcat-8/configuration-default` copies the default tomcat configuration which is
 **NOT SUITED FOR PRODUCTION USE**. Its only provided for convenience in development setups.
 
+The role :ansible:role:`role-apache/tomcat-8/configuration-copy` can be used to copy a complete directory into
+`conf/.
+
+
 Default Applications
 --------------------
 

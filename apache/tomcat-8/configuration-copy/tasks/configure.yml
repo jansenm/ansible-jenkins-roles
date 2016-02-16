@@ -1,0 +1,8 @@
+- name: CONFIGURE | COPY TOMCAT CONFIGURATION
+  # =====================================================================
+  # rsync did not work. Need to find out why
+  copy:
+    src: "{{configuration}}/"
+    dest: "{{catalina_base}}/conf"
+    mode: 0700
+
