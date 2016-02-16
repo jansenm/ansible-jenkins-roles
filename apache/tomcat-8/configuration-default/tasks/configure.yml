@@ -1,0 +1,10 @@
+- name: INSTALL | PREPARE TOMCAT CONFIGURATION
+  # =====================================================================
+  command: cp -r "{{catalina_home}}/conf/" "{{catalina_base}}/conf"
+  # Not yet :( https://github.com/ansible/ansible-modules-core/issues/2098
+  # copy:
+  #   src: "{{catalina_home}}/conf/"
+  #   dest: "{{catalina_base}}/conf"
+  #   remote_src: yes
+  #   mode: 0700
+

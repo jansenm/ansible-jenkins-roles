@@ -1,0 +1,9 @@
+---
+- name: "INIT | CHECK PARAMETERS"
+  # =====================================================================
+  assert:
+    that:
+      # Base of a existing and unpacked apache-tomcat archive
+      - catalina_home is defined and catalina_home is not none
+      # This is were the tomcat instance will be created
+      - catalina_base is defined and catalina_base is not none

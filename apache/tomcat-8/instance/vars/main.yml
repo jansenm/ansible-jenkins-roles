@@ -10,14 +10,5 @@ catalina_home: "{{apache_tomcat_8_instance_catalina_home}}"
 # Options for the jvm
 java_opts: "{{apache_tomcat_8_java_opts}}"
 
-# Server port
-server_port: "{{apache_tomcat_server_port}}"
-
-# Http connector port.
-http_connector_port: "{{apache_tomcat_http_connector_port}}"
-
-# Ajp connector port
-ajp_connector_port: "{{apache_tomcat_ajp_connector_port}}"
-
 # Tomcat manager apps to copy into the instance
 manager_apps: "{{apache_tomcat_8_instance_manager_apps}}"

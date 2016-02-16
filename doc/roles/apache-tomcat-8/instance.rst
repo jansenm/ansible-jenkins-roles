@@ -23,16 +23,30 @@ Role apache/tomcat-8/instance
    :param catalina_home: The apache tomcat install to use.
    :param java_home: Java installation to use for running tomcat.
    :param java_opts: Options for the jvm.
-   :param server_port: Server port (default: :file:`{{apache_tomcat_server_port}}`).
-   :param http_connector_port: Http connector port (default: :file:`{{apache_tomcat_http_connector_port}}`).
-   :param ajp_connector_port: Ajp connector port (default: :file:`{{apache_tomcat_ajp_connector_port}}`).
+   :param server_port: Server port (default: `{{apache_tomcat_server_port}}`).
+   :param http_connector_port: Http connector port (default: `{{apache_tomcat_http_connector_port}}`).
+   :param ajp_connector_port: Ajp connector port (default: `{{apache_tomcat_ajp_connector_port}}`).
    :param cache_directory: Where to cache downloaded artifacts for future reuse on play host.
 
-   Tomcats comes with the following web applications
 
-   - "host-manager"
-   - "manager"
-   - "ROOT"
-   - "examples"
-   - "docs"
+Configuration
+-------------
+
+This creates a tomcat instance with an empty `conf/` directory. The next step is to add some configuration. As there
+is no common tomcat configuration that fits all use cases its your responsibility to fill in the configuration
+according to your needs.
+
+The role :ansible:role:`role-apache/tomcat-8/configuration-default` copies the default tomcat configuration which is
+**NOT SUITED FOR PRODUCTION USE**. Its only provided for convenience in development setups.
+
+Default Applications
+--------------------
+
+Tomcats comes with the following web applications
+
+- "host-manager"
+- "manager"
+- "ROOT"
+- "examples"
+- "docs"
 

@@ -1,0 +1,6 @@
+# Base directory of the new tomcat instance
+# catalina_base:
+
+# Apache tomcat distribution to use.
+catalina_home: "{{apache_tomcat_8_instance_catalina_home}}"
+

@@ -10,6 +10,12 @@
     - "{{jenkins_home}}/plugins"
     - "{{jenkins_home}}/init.groovy.d"
 
+- name: INSTALL | CREATE TOMCAT CONTEXT CONFIGURATION DIRECTORY
+  # =====================================================================
+  file:
+    state: "directory"
+    path: "{{catalina_base}}/conf/Catalina/localhost"
+
 - name: INSTALL | CONFIGURE TOMCAT CONTEXT
   # =====================================================================
   template:

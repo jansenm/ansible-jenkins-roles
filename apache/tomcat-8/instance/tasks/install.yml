@@ -18,28 +18,8 @@
       - "work"
       - "temp"
       - "logs"
-      - "conf/Catalina/localhost"
 
-- name: INSTALL | PREPARE TOMCAT STRUCTURE (COPY)
-  # =====================================================================
-  command: cp "{{catalina_home}}/{{item}}" "{{catalina_base}}/{{item}}"
-  args:
-    creates: "{{catalina_base}}/{{item}}"
-  # action: copy
-  # args:
-  #     dest: "{{catalina_home}}/{{item}}"
-  #     src: "{{catalina_home}}/apache-tomcat-{{apache_tomcat_download_version}}/{{item}}"
-  #     remote_src: True
-  with_items:
-      - "conf/catalina.policy"
-      - "conf/catalina.properties"
-      - "conf/context.xml"
-      - "conf/logging.properties"
-      - "conf/server.xml"
-      - "conf/tomcat-users.xml"
-      - "conf/web.xml"
-
-- name: INSTALL | PREPARE CONTROL SCRIPTS AND CONFIGURATION
+- name: INSTALL | PREPARE CONTROL SCRIPTS
   # =====================================================================
   template:
   args:
@@ -51,9 +31,8 @@
       - "bin/shutdown.sh"
       - "bin/catalina.sh"
       - "bin/setenv.sh"
-      - "conf/server.xml"
 
-- name: INSTALL | PREPARE TOMCAT STRUCTURE (MANAGER APPS)
+- name: INSTALL | INSTALL DEFAULT APPLICATIONS
   # =====================================================================
   command: cp -r "{{catalina_home}}/webapps/{{item}}" "{{catalina_base}}/webapps/"
   args:
