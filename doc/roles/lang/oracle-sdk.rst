@@ -10,7 +10,7 @@ Download and install `oracle java sdk`_.
    :default lang_java_oracle_sdk_server: The download server.
    :default lang_java_oracle_sdk_version: The default java version to install (default: none).
 
-   :param version: The java version number to install (eg. 1.8.0_65).
+   :param version: The java version number to install (eg. 1.8.0_65)(default: `{{lang_java_oracle_sdk_version}}`.
    :param build: The build number of the version (eg. 17).
    :param platform: The platform to download.
    :param format: The format to download.
